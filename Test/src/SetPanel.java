@@ -1,14 +1,20 @@
 import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
+import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.Label;
+import java.awt.Panel;
+import java.awt.TextArea;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class SetPanel extends JPanel {
 	public SetPanel() {
@@ -16,7 +22,8 @@ public class SetPanel extends JPanel {
 
 		setLayout(null);
 
-		String menu[] = { "NBB 오리지널 Set", "NBB 시그니처 Set", "NBB 어메이징 Set", "그릴드불고기 Set", "데리마요 Set", "산체스 Set", "스모키살사 Set", "코울슬로치킨 Set", "스리라차치킨 Set", "미트마니아 Set", "메가바이트 Set"};
+		String menu[] = { "NBB 오리지널 Set", "NBB 시그니처 Set", "NBB 어메이징 Set", "그릴드불고기 Set", "데리마요 Set", "산체스 Set",
+				"스모키살사 Set", "코울슬로치킨 Set", "스리라차치킨 Set", "미트마니아 Set", "메가바이트 Set" };
 		int price[] = { 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8000, 8000, 8000, 8000 };
 		JButton bt[] = new JButton[menu.length];
 		TextField suja[] = new TextField[menu.length];
@@ -73,36 +80,3 @@ public class SetPanel extends JPanel {
 		}
 	}
 }
-		
-//		for (int i1 = 0; i1 < menu.length; i1++) {
-//			int j = i1;
-//
-//			// 햄버그 버튼 이벤트
-//			bt[i1].addActionListener(new ActionListener() {
-//					
-//				@Override
-//				public void actionPerformed(ActionEvent e) {
-//					minus[j].setEnabled(true);
-//					plus[j].setEnabled(true);
-//					bt[j].setEnabled(false);
-//					ok[j].setEnabled(true);
-//
-//					count = 0;
-//				}
-//			});
-//
-//			// "-" 버튼 이벤트
-//			minus[i1].addActionListener(new ActionListener() {
-//
-//				@Override
-//				public void actionPerformed(ActionEvent e) {
-//					if (count > 0) {
-//						count = count - 1;
-//						suja[j].setText(count + "");
-//						ok[j].setEnabled(true);
-//					} else {
-//						minus[j].setEnabled(false);
-//					}
-//				}
-//			});
-//		}

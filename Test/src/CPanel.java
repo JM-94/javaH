@@ -26,10 +26,10 @@ public class CPanel extends JPanel {
 
 			// 햄버거 버튼
 			bt[i] = new JButton(menu[i]);
-			if (i < 4) {
+			if (i < 6) {
 				bt[i].setBounds(25 + i * 150, 50, 100, 100);
 			} else {
-				bt[i].setBounds(25 + (i - 4) * 150, 300, 100, 100);
+				bt[i].setBounds(25 + (i - 6) * 150, 300, 100, 100);
 			}
 			icon[i] = new ImageIcon(i + ".png");
 			bt[i].setIcon(icon[i]);
