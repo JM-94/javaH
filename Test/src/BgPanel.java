@@ -1,18 +1,21 @@
 import javax.swing.JPanel;
-import java.awt.Button;
-import java.awt.Color;
-import java.awt.Label;
-import java.awt.TextField;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.Label;
+import java.awt.TextField;
 
-public class CPanel extends JPanel {
-	public CPanel() {
+public class BgPanel extends JPanel {
+	public BgPanel() {
 		setLayout(null);
 
-		String menu[] = { "펩시콜라", "펩시맥스", "사이다", "미린다(오렌지)", "레몬에이드", "오렌지주스", "아메리카노" };
-		int price[] = { 5000, 5500, 6000, 6500, 7000, 7500, 8000 };
+		setLayout(null);
+
+		String menu[] = { "NBB 오리지널", "NBB 시그니처", "NBB 어메이징", "그릴드불고기", "데리마요", "산체스", "스모키살사", "코울슬로치킨", "스리라차치킨", "미트마니아", "메가바이트"};
+		int price[] = { 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8000, 8000, 8000, 8000 };
 		JButton bt[] = new JButton[menu.length];
 		TextField suja[] = new TextField[menu.length];
 		Button minus[] = new Button[menu.length];
@@ -26,10 +29,10 @@ public class CPanel extends JPanel {
 
 			// 햄버거 버튼
 			bt[i] = new JButton(menu[i]);
-			if (i < 4) {
+			if (i < 6) {
 				bt[i].setBounds(25 + i * 150, 50, 100, 100);
 			} else {
-				bt[i].setBounds(25 + (i - 4) * 150, 300, 100, 100);
+				bt[i].setBounds(25 + (i - 6) * 150, 300, 100, 100);
 			}
 			icon[i] = new ImageIcon(i + ".png");
 			bt[i].setIcon(icon[i]);

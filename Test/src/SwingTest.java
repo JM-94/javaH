@@ -18,31 +18,31 @@ public class SwingTest extends JFrame{
 		getContentPane().setLayout(null);
 		
 		JButton btn1 = new JButton("버거");
-		btn1.setBounds(12, 528, 97, 23);
+		btn1.setBounds(924, 10, 97, 66);
 		getContentPane().add(btn1);
 		
 		JButton btn2 = new JButton("세트");
-		btn2.setBounds(154, 528, 97, 23);
+		btn2.setBounds(924, 110, 97, 66);
 		getContentPane().add(btn2);
 		
 		JButton btn3 = new JButton("사이드");
-		btn3.setBounds(467, 528, 97, 23);
+		btn3.setBounds(924, 325, 97, 66);
 		getContentPane().add(btn3);
 		
 		JButton btn4 = new JButton("디저트");
-		btn4.setBounds(615, 528, 97, 23);
+		btn4.setBounds(924, 434, 97, 66);
 		getContentPane().add(btn4);
 		
 		JButton btn5 = new JButton("음료");
-		btn5.setBounds(309, 528, 97, 23);
+		btn5.setBounds(924, 219, 97, 66);
 		getContentPane().add(btn5);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.LIGHT_GRAY);
-		panel.setBounds(12, 0, 700, 518);
+		panel.setBounds(12, 0, 900, 500);
 		panel.setLayout(new CardLayout(0, 0));
 		
-		Memupanel mp1 = new Memupanel("1");
+		BgPanel mp1 = new BgPanel();
 		Memupanel mp2 = new Memupanel("2");
 		panel.add(mp1,"1");
 		panel.add(mp2,"2");
@@ -61,21 +61,21 @@ public class SwingTest extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cards =  (CardLayout) panel.getLayout();				
-				cards.show(panel, "1");
+				cards.show(panel, "버거");
 			}
 		});
 		btn2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cards =  (CardLayout) panel.getLayout();				
-				cards.show(panel, "2");
+				cards.show(panel, "세트");
 			}
 		});
 		btn3.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cards =  (CardLayout) panel.getLayout();				
-				cards.show(panel, "3");
+				cards.show(panel, "음료");
 			}
 		});
 		
@@ -83,7 +83,7 @@ public class SwingTest extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cards =  (CardLayout) panel.getLayout();				
-				cards.show(panel, "4");
+				cards.show(panel, "사이드");
 			}
 		});
 		
@@ -91,11 +91,11 @@ public class SwingTest extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cards =  (CardLayout) panel.getLayout();				
-				cards.show(panel, "cp1");
+				cards.show(panel, "디저트");
 			}
 		});
 		
-		setSize(800, 600);
+		setSize(1200, 1000);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

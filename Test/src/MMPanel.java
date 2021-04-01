@@ -1,17 +1,11 @@
 import javax.swing.JPanel;
-
-import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Color;
 import java.awt.Label;
 import java.awt.TextField;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.JRadioButton;
+
 
 public class MMPanel extends JPanel {
 	int count = 0;
@@ -19,8 +13,8 @@ public class MMPanel extends JPanel {
 	public MMPanel() {
 		setLayout(null);
 
-		String menu[] = { "인절미 치즈볼", "치킨텐더 3조각", "치킨텐더 5조각", "NBB 치킨너겟", "어니언 도넛", "감자튀김 M", "감자튀김 L" };
-		int price[] = { 5000, 5500, 6000, 6500, 7000, 7500, 8000 };
+		String menu[] = { "치킨시저샐러드", "그린샐러드", "콤비 피자바게트", "페퍼로니 피자바게트", "상하이핑커포크 S", "상하이핑거포크 L"};
+		int price[] = { 5000, 5500, 6000, 6500, 7000, 7500};
 		JButton bt[] = new JButton[menu.length];
 		TextField suja[] = new TextField[menu.length];
 		Button minus[] = new Button[menu.length];
