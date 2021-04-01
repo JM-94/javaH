@@ -1,7 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Label;
 import java.awt.Panel;
 import java.awt.TextArea;
@@ -24,23 +23,19 @@ public class Test {
 		// 디자인단
 		// 프레임 설정단
 		JFrame frame = new JFrame("No Brand 키오스크");
-		frame.setBounds(0, 0, 625, 1000);
+		frame.setBounds(0, 0, 900, 1000);
 		frame.setBackground(Color.black);
-
-		// 폰트
-		Font font = new Font(Font.SANS_SERIF, Font.PLAIN, 18);
-		Font font1 = new Font(Font.MONOSPACED, Font.BOLD, 22);
 
 		// 북쪽
 		Panel pNorth = new Panel();
 		pNorth.setBackground(new Color(255, 255, 215));
 		pNorth.setLayout(null);
 		pNorth.setSize(0, 500);
-		pNorth.setFont(font);
 
 		// 배열 설정 부분
-		String menu[] = { "NBB 오리지널", "NBB 시그니처", "NBB 어메이징", "그릴드 불고기", "데리마요", "산체스", "스모키살사", "코울슬로치킨"};
-		int price[] = { 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 8500 };
+		String menu[] = { "NBB 오리지널", "NBB 시그니처", "NBB 어메이징", "그릴드 불고기", "데리마요", "산체스", "스모키살사", "코울슬로치킨", "스리라차치킨",
+				"미트마니아", "메가바이트" };
+		int price[] = { 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 8500, 8500, 8500, 8500 };
 		JButton bt[] = new JButton[menu.length];
 		TextField suja[] = new TextField[menu.length];
 		Button minus[] = new Button[menu.length];
@@ -54,10 +49,10 @@ public class Test {
 
 			// 햄버거 버튼
 			bt[i] = new JButton(menu[i]);
-			if (i < 4) {
+			if (i < 6) {
 				bt[i].setBounds(25 + i * 150, 50, 100, 100);
 			} else {
-				bt[i].setBounds(25 + (i - 4) * 150, 300, 100, 100);
+				bt[i].setBounds(25 + (i - 6) * 150, 300, 100, 100);
 			}
 			icon[i] = new ImageIcon(i + ".png");
 			bt[i].setIcon(icon[i]);
@@ -97,14 +92,12 @@ public class Test {
 
 		// 중앙
 		TextArea ta = new TextArea("", 0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
-		ta.setText("   상품명        단가        수량        합계\n\n");
+		ta.setText("   상품명                                 단가                           수량                         합계\r\n\r\n");
 		ta.setBackground(Color.white);
 		ta.setEditable(false);
-		ta.setFont(font1);
 
 		// 남쪽
 		Panel pSouth = new Panel();
-		pSouth.setFont(font);
 		pSouth.setBackground(new Color(255, 255, 215));
 
 		Button bt1 = new Button("주문");
@@ -125,7 +118,7 @@ public class Test {
 					minus[i].setEnabled(false);
 					plus[i].setEnabled(false);
 					suja[i].setText("0");
-					ta.setText("   상품명        단가        수량        합계\n\n");
+					ta.setText("   상품명                                 단가                           수량                         합계\n\n");
 
 				}
 			}
@@ -141,7 +134,7 @@ public class Test {
 					minus[i].setEnabled(false);
 					plus[i].setEnabled(false);
 					suja[i].setText("0");
-					ta.setText("   상품명        단가        수량        합계\n\n");
+					ta.setText("   상품명                                 단가                           수량                         합계\n\n");
 
 				}
 			}

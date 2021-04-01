@@ -43,17 +43,17 @@ public class SwingTest extends JFrame{
 		panel.setLayout(new CardLayout(0, 0));
 		
 		BgPanel mp1 = new BgPanel();
-		Memupanel mp2 = new Memupanel("2");
-		panel.add(mp1,"1");
-		panel.add(mp2,"2");
+		SetPanel mp2 = new SetPanel();
+		panel.add(mp1,"버거");
+		panel.add(mp2,"세트");
 		
 		MMPanel mp3 = new MMPanel();
 		NNPanel mp4 = new NNPanel();
-		panel.add(mp3,"3");
-		panel.add(mp4,"4");
+		panel.add(mp3,"사이드");
+		panel.add(mp4,"디저트");
 		
 		CPanel cp1 = new CPanel();
-		panel.add(cp1,"cp1");
+		panel.add(cp1,"음료");
 		
 		getContentPane().add(panel);
 		
@@ -75,7 +75,7 @@ public class SwingTest extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cards =  (CardLayout) panel.getLayout();				
-				cards.show(panel, "음료");
+				cards.show(panel, "사이드");
 			}
 		});
 		
@@ -83,7 +83,7 @@ public class SwingTest extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cards =  (CardLayout) panel.getLayout();				
-				cards.show(panel, "사이드");
+				cards.show(panel, "디저트");
 			}
 		});
 		
@@ -91,7 +91,7 @@ public class SwingTest extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				CardLayout cards =  (CardLayout) panel.getLayout();				
-				cards.show(panel, "디저트");
+				cards.show(panel, "음료");
 			}
 		});
 		

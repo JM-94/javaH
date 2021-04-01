@@ -10,13 +10,13 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class BgPanel extends JPanel {
-	public BgPanel() {
+public class SetPanel extends JPanel {
+	public SetPanel() {
 		int count = 0;
 
 		setLayout(null);
 
-		String menu[] = { "NBB 오리지널", "NBB 시그니처", "NBB 어메이징", "그릴드불고기", "데리마요", "산체스", "스모키살사", "코울슬로치킨", "스리라차치킨", "미트마니아", "메가바이트"};
+		String menu[] = { "NBB 오리지널 Set", "NBB 시그니처 Set", "NBB 어메이징 Set", "그릴드불고기 Set", "데리마요 Set", "산체스 Set", "스모키살사 Set", "코울슬로치킨 Set", "스리라차치킨 Set", "미트마니아 Set", "메가바이트 Set"};
 		int price[] = { 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8000, 8000, 8000, 8000 };
 		JButton bt[] = new JButton[menu.length];
 		TextField suja[] = new TextField[menu.length];
