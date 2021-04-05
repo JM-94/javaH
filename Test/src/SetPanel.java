@@ -1,6 +1,7 @@
 import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import java.awt.BorderLayout;
@@ -17,6 +18,8 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class SetPanel extends JPanel {
+	static int count1 = 0;
+	static String show = "";
 	public SetPanel() {
 		int count = 0;
 
@@ -56,6 +59,7 @@ public class SetPanel extends JPanel {
 			minus[i] = new Button("-");
 			minus[i].setBounds(bt[i].getX(), suja[i].getY(), 20, 20);
 			minus[i].setEnabled(false);
+			
 
 			// "+" 버튼
 			plus[i] = new Button("+");
@@ -70,7 +74,13 @@ public class SetPanel extends JPanel {
 			ok[i] = new JButton("확인");
 			ok[i].setBounds(bt[i].getX(), suja[i].getY() + 30, 100, 20);
 			ok[i].setEnabled(false);
-
+			
+			
+		
+			
+			
+			
+			
 			add(bt[i]);
 			add(suja[i]);
 			add(minus[i]);
@@ -78,5 +88,77 @@ public class SetPanel extends JPanel {
 			add(l[i]);
 			add(ok[i]);
 		}
+		TextArea ta = new TextArea("", 0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
+		ta.setText("   상품명                                 단가                           수량                         합계\r\n\r\n");
+		ta.setBackground(Color.white);
+		ta.setEditable(false);
+		
+		for (int i1 = 0; i1 < menu.length; i1++) {
+			int j = i1;
+			
+			// 햄버그 버튼 이벤트
+						bt[i1].addActionListener(new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								minus[j].setEnabled(true);
+								plus[j].setEnabled(true);
+								bt[j].setEnabled(false);
+								ok[j].setEnabled(true);
+
+								count1 = 0;
+							}
+						});
+			
+			// "-" 버튼 이벤트
+			minus[i1].addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					if (count1 > 0) {
+						count1 = count1 - 1;
+						suja[j].setText(count + "");
+						ok[j].setEnabled(true);
+					} else {
+						minus[j].setEnabled(false);
+					}
+				}
+			});
+
+			// "+" 버튼 이벤트
+			plus[i1].addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					count1 = count1 + 1;
+					suja[j].setText(count1 + "");
+					ok[j].setEnabled(true);
+					if (count1 > 0) {
+						minus[j].setEnabled(true);
+					}
+				}
+			});
+
+			// 확인 버튼 이벤트
+			ok[i1].addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					show = bt[j].getActionCommand();
+					ta.append("   " + show + "       " + price[j] + "        " + count + "         " + price[j] * count
+							+ "원" + "\n");
+					ok[j].setEnabled(false);
+				}
+			});
+
+		}
+		JFrame frame = new JFrame("");
+		
+		// 끄기
+		frame.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
 	}
 }
