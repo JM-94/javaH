@@ -41,7 +41,7 @@ public class Order_save{
       	bw.newLine();
       	bw.write(String.format("%10s %20s %20s","메뉴","수량","합계"));
       	bw.newLine();
-      for(int i = 0; i < 2; i++){
+      for(int i = 0; i < 100; i++){
     	  if(Main.mount[i] != 0){
     		  bw.write(String.format("%10s %20d %20d",Main.menu[i],Main.mount[i],Main.mount[i]*Main.price[i]));
     		  bw.newLine();

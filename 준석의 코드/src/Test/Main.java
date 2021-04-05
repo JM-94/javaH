@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextPane;
+import java.awt.Font;
 //class Mypanel extends JPanel{
 //	public String name;
 //
@@ -19,9 +20,9 @@ import javax.swing.JTextPane;
 //	}
 //}
 public class Main extends JFrame{
-	static int[] price = new int[2];
-	static int[] mount = new int [2];
-	static String[] menu = new String[2];
+	static int[] price = new int[100];
+	static int[] mount = new int [100];
+	static String[] menu = new String[100];
 	Order_save os= new Order_save();
 	int a = 0;
 
@@ -64,9 +65,10 @@ public class Main extends JFrame{
 		panel.add(d,"4");
 		
 		JTextArea select = new JTextArea();
-		select.setBackground(Color.GRAY);
+		select.setFont(new Font("Monospaced", Font.PLAIN, 25));
+		select.setBackground(new Color(255, 105, 180));
 		select.setText("\t상품명\t\t\t수량\t\t\t합계 \n");
-		select.setBounds(0, 445, 900, 370);
+		select.setBounds(0, 445, 884, 370);
 		select.setEditable(false);
 		getContentPane().add(select);
 		
@@ -77,7 +79,7 @@ public class Main extends JFrame{
 //				if(a.menu != null && a.count !=0){
 //				select.append(a.menu+"/t/t"+a.count+"/t/t "+(a.price*a.count)+"\n");
 //				}
-				for(int i = 0; i < 2; i++){
+				for(int i = 0; i < 100; i++){
 					if(menu[i] != null && mount[i] != 0)
 					select.append(menu[i]+"    "+mount[i]+"  "+(price[i]*mount[i])+"\n");
 					}
@@ -95,7 +97,7 @@ public class Main extends JFrame{
 				select.setText("\t상품명\t\t\t수량\t\t\t합계 \n");
 				a.getTextField().setText("0");
 				a.getTextField1().setText("0");
-				for(int i = 0; i < 2; i++){
+				for(int i = 0; i < 100; i++){
 					menu[i] = null;
 					mount[i] = 0;
 				}
@@ -106,7 +108,7 @@ public class Main extends JFrame{
 		
 		
 		JButton btnNewButton_2 = new JButton("매출");
-		btnNewButton_2.setBounds(329, 827, 97, 23);
+		btnNewButton_2.setBounds(336, 827, 97, 23);
 		getContentPane().add(btnNewButton_2);
 		
 		
@@ -116,7 +118,7 @@ public class Main extends JFrame{
 				System.exit(0);
 			}
 		});
-		exit.setBounds(491, 827, 97, 23);
+		exit.setBounds(445, 827, 97, 23);
 		getContentPane().add(exit);
 		
 		JButton order = new JButton("주문");
@@ -132,7 +134,7 @@ public class Main extends JFrame{
 				a.getTextField1().setText("0");
 			}
 		});
-		order.setBounds(0, 814, 127, 47);
+		order.setBounds(229, 828, 97, 23);
 		getContentPane().add(order);
 	
 		

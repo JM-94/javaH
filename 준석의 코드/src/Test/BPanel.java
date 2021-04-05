@@ -11,6 +11,10 @@ public class BPanel extends JPanel {
 		btnNewButton.setBounds(121, 108, 97, 23);
 		add(btnNewButton);
 		
+		JButton btnNewButton2 = new JButton("New button");
+		btnNewButton.setBounds(121, 108, 97, 23);
+		add(btnNewButton);
+		
 		JButton btnNewButton_1 = new JButton("New button");
 		btnNewButton_1.setBounds(229, 168, 97, 23);
 		add(btnNewButton_1);
