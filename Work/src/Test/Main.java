@@ -2,6 +2,7 @@ package Test;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -10,39 +11,46 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextPane;
-class Mypanel extends JPanel{
-	public String name;
-
-	public Mypanel() {
-		this.name = name;
-	}
-}
+//class Mypanel extends JPanel{
+//	public String name;
+//
+//	public Mypanel() {
+//		this.name = name;
+//	}
+//}
 public class Main extends JFrame{
+	static int[] price = new int[2];
+	static int[] mount = new int [2];
+	static String[] menu = new String[2];
+	Order_save os= new Order_save();
+	int a = 0;
+
+
 	public Main(){
 		getContentPane().setLayout(null);
 		
 		JButton burger = new JButton("버거");
-		burger.setBounds(12, 412, 97, 23);
+		burger.setBounds(750, 0, 134, 97);
 		getContentPane().add(burger);
 		
 		JButton chicken = new JButton("치킨");
-		chicken.setBounds(148, 412, 97, 23);
+		chicken.setBounds(750, 97, 134, 103);
 		getContentPane().add(chicken);
 		
 		JButton side = new JButton("사이드");
-		side.setBounds(302, 412, 97, 23);
+		side.setBounds(750, 196, 134, 97);
 		getContentPane().add(side);
 		
 		JButton beverage = new JButton("음료");
-		beverage.setBounds(462, 412, 97, 23);
+		beverage.setBounds(750, 293, 134, 97);
 		getContentPane().add(beverage);
 		
 		setVisible(true);
-		setSize(600,900);
+		setSize(900,900);
 		
 		JPanel panel = new JPanel();	//창추가
 		panel.setBackground(Color.LIGHT_GRAY);
-		panel.setBounds(0, 0, 580, 390);
+		panel.setBounds(0, 0, 750, 390);
 		getContentPane().add(panel);
 		panel.setLayout(new CardLayout(0, 0));
 		
@@ -55,11 +63,78 @@ public class Main extends JFrame{
 		DPanel d = new DPanel();
 		panel.add(d,"4");
 		
-		JTextPane select = new JTextPane();
-		select.setText("상품명 단가  수량  합계 \n\n");
-		select.setBounds(0, 445, 584, 371);
+		JTextArea select = new JTextArea();
+		select.setBackground(Color.GRAY);
+		select.setText("\t상품명\t\t\t수량\t\t\t합계 \n");
+		select.setBounds(0, 445, 900, 370);
 		select.setEditable(false);
 		getContentPane().add(select);
+		
+		JButton check = new JButton("확인");
+		check.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				select.setText("\t상품명\t\t\t수량\t\t\t합계 \n");
+//				if(a.menu != null && a.count !=0){
+//				select.append(a.menu+"/t/t"+a.count+"/t/t "+(a.price*a.count)+"\n");
+//				}
+				for(int i = 0; i < 2; i++){
+					if(menu[i] != null && mount[i] != 0)
+					select.append(menu[i]+"    "+mount[i]+"  "+(price[i]*mount[i])+"\n");
+					}
+				}
+
+			
+		});
+		check.setBounds(0, 388, 447, 58);
+		getContentPane().add(check);
+		
+		
+		JButton clear = new JButton("초기화");
+		clear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				select.setText("\t상품명\t\t\t수량\t\t\t합계 \n");
+				a.getTextField().setText("0");
+				a.getTextField1().setText("0");
+				for(int i = 0; i < 2; i++){
+					menu[i] = null;
+					mount[i] = 0;
+				}
+			}
+		});
+		clear.setBounds(445, 388, 439, 58);
+		getContentPane().add(clear);
+		
+		
+		JButton btnNewButton_2 = new JButton("매출");
+		btnNewButton_2.setBounds(329, 827, 97, 23);
+		getContentPane().add(btnNewButton_2);
+		
+		
+		JButton exit = new JButton("종료");
+		exit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+		exit.setBounds(491, 827, 97, 23);
+		getContentPane().add(exit);
+		
+		JButton order = new JButton("주문");
+		order.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				os.Order();
+				select.setText("\t상품명\t\t\t수량\t\t\t합계 \n");
+				for(int i = 0; i < 2; i++){
+					menu[i] = null;
+					mount[i] = 0;
+				}
+				a.getTextField().setText("0");
+				a.getTextField1().setText("0");
+			}
+		});
+		order.setBounds(0, 814, 127, 47);
+		getContentPane().add(order);
+	
 		
 		burger.addActionListener(new ActionListener() {
 			@Override
@@ -93,7 +168,5 @@ public class Main extends JFrame{
 	}
 	public static void main(String[] args) {
 		new Main();
-
 	}
-	
 }
