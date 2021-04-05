@@ -1,7 +1,10 @@
 package Test;
 
 import javax.swing.JFrame;
+
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 
 import java.awt.CardLayout;
@@ -11,6 +14,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextPane;
+import javax.swing.table.DefaultTableModel;
 import java.awt.Font;
 //class Mypanel extends JPanel{
 //	public String name;
@@ -25,16 +29,17 @@ public class Main extends JFrame{
 	static String[] menu = new String[100];
 	Order_save os= new Order_save();
 	int a = 0;
+	JTable table = new JTable();
 
 
 	public Main(){
 		getContentPane().setLayout(null);
 		
-		JButton burger = new JButton("버거");
+		JButton burger = new JButton("\uBC84\uAC70\uC138\uD2B8");
 		burger.setBounds(750, 0, 134, 97);
 		getContentPane().add(burger);
 		
-		JButton chicken = new JButton("치킨");
+		JButton chicken = new JButton("\uBC84\uAC70");
 		chicken.setBounds(750, 97, 134, 103);
 		getContentPane().add(chicken);
 		
@@ -64,42 +69,53 @@ public class Main extends JFrame{
 		DPanel d = new DPanel();
 		panel.add(d,"4");
 		
-		JTextArea select = new JTextArea();
-		select.setFont(new Font("Monospaced", Font.PLAIN, 25));
-		select.setBackground(new Color(255, 105, 180));
-		select.setText("\t상품명\t\t\t수량\t\t\t합계 \n");
-		select.setBounds(0, 445, 884, 370);
-		select.setEditable(false);
-		getContentPane().add(select);
 		
 		JButton check = new JButton("확인");
 		check.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				select.setText("\t상품명\t\t\t수량\t\t\t합계 \n");
-//				if(a.menu != null && a.count !=0){
-//				select.append(a.menu+"/t/t"+a.count+"/t/t "+(a.price*a.count)+"\n");
-//				}
-				for(int i = 0; i < 100; i++){
-					if(menu[i] != null && mount[i] != 0)
-					select.append(menu[i]+"    "+mount[i]+"  "+(price[i]*mount[i])+"\n");
+				
+				// select.setText("\t상품명\t\t\t수량\t\t\t합계 \n");
+				// if(a.menu != null && a.count !=0){
+				// select.append(a.menu+"/t/t"+a.count+"/t/t
+				// "+(a.price*a.count)+"\n");
+				// }
+				// jtable 추가
+				//표
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
+				model.setNumRows(0);
+				String str[] = new String[4];
+				for (int i = 0; i < 2; i++) {
+					if (menu[i] != null && mount[i] != 0)
+						model = (DefaultTableModel) table.getModel();
+					// model.addRow(menu[i]+" "+mount[i]+"
+					// "+(price[i]*mount[i]));
+					str[0] = "" + menu[i];
+					str[1] = "" + price[i];
+					str[2] = "" + mount[i];
+					str[3] = "" + (price[i] * mount[i]);
+					if ( !(str[0].equals("null")) ){//null값이 아니면
+						model.addRow(str);//데이터출력
 					}
 				}
+			}
 
-			
 		});
-		check.setBounds(0, 388, 447, 58);
-		getContentPane().add(check);
+
 		
+		check.setBounds(0, 388, 447, 58);
+		getContentPane().add(check);		
 		
 		JButton clear = new JButton("초기화");
 		clear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				select.setText("\t상품명\t\t\t수량\t\t\t합계 \n");
-				a.getTextField().setText("0");
-				a.getTextField1().setText("0");
-				for(int i = 0; i < 100; i++){
-					menu[i] = null;
-					mount[i] = 0;
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
+				model.setNumRows(0);
+				String str[] = new String[4];
+				for (int i = 0; i < 4; i++) {
+					model = (DefaultTableModel) table.getModel();
+					// model.addRow(menu[i]+" "+mount[i]+"
+					// "+(price[i]*mount[i]));
+					str[i] = null;
 				}
 			}
 		});
@@ -122,20 +138,27 @@ public class Main extends JFrame{
 		getContentPane().add(exit);
 		
 		JButton order = new JButton("주문");
-		order.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				os.Order();
-				select.setText("\t상품명\t\t\t수량\t\t\t합계 \n");
-				for(int i = 0; i < 2; i++){
-					menu[i] = null;
-					mount[i] = 0;
-				}
-				a.getTextField().setText("0");
-				a.getTextField1().setText("0");
-			}
-		});
+//		order.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent arg0) {
+//				os.Order();
+//				select.setText("\t상품명\t\t\t수량\t\t\t합계 \n");
+//				for(int i = 0; i < 2; i++){
+//					menu[i] = null;
+//					mount[i] = 0;
+//				}
+//				a.getTextField().setText("0");
+//				a.getTextField1().setText("0");
+//			}
+//		});
 		order.setBounds(229, 828, 97, 23);
 		getContentPane().add(order);
+		table.setModel(new DefaultTableModel(new Object[][] { { null, null, null, null }, },
+				new String[] { "\uC0C1\uD488\uBA85", "\uAC00\uACA9", "\uC218\uB7C9", "\uD569\uACC4" }));
+
+		JScrollPane scrollPane = new JScrollPane(table);
+		scrollPane.setBounds(0, 441, 884, 376);
+		getContentPane().add(scrollPane);
+		table.setBounds(0, 0, 0, 0);
 	
 		
 		burger.addActionListener(new ActionListener() {
