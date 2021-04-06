@@ -84,7 +84,7 @@ public class Main extends JFrame{
 				DefaultTableModel model = (DefaultTableModel) table.getModel();
 				model.setNumRows(0);
 				String str[] = new String[4];
-				for (int i = 0; i < 2; i++) {
+				for (int i = 0; i < 100; i++) {
 					if (menu[i] != null && mount[i] != 0)
 						model = (DefaultTableModel) table.getModel();
 					// model.addRow(menu[i]+" "+mount[i]+"

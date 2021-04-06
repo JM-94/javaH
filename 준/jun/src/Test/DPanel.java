@@ -27,13 +27,13 @@ public class DPanel extends JPanel {
 		
 		
 		
-		// @@@@@@@@@@@@@@@@@@@@ NBB시그니처
+		// @@@@@@@@@@@@@@@@@@@@ 펩시콜라M
 		JButton sn = new JButton("\uD3A9\uC2DC\uCF5C\uB77CM");
 		sn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.mount[30] = 0;
-				Main.menu[30] = "NBB시그니처";
-				Main.price[30] = 3500;
+				Main.menu[30] = "펩시콜라M";
+				Main.price[30] = 1500;
 			}
 		});
 		sn.setBounds(15, 10, 135, 90);
@@ -78,13 +78,13 @@ public class DPanel extends JPanel {
 		
 		
 		
-		// @@@@@@@@@@@@@@@@@@@@ NBB오리지날
+		// @@@@@@@@@@@@@@@@@@@@ 사이다M
 		JButton chi = new JButton("\uC0AC\uC774\uB2E4M");
 		chi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.mount[31] = 0;
-				Main.menu[31] = "NBB오리지날";
-				Main.price[31] = 2900;
+				Main.menu[31] = "사이다M";
+				Main.price[31] = 1500;
 			}
 		});
 		chi.setBounds(162, 10, 135, 90);
@@ -126,13 +126,13 @@ public class DPanel extends JPanel {
 		
 		
 		
-		// nbb어메이징
+		// 미린다(오렌지)M
 		JButton bul_1 = new JButton("\uBBF8\uB9B0\uB2E4(\uC624\uB80C\uC9C0)M");
 		bul_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.mount[32] = 0;
-				Main.menu[32] = "NBB어메이징";
-				Main.price[32] = 4900;
+				Main.menu[32] = "미린다(오렌지)M";
+				Main.price[32] = 1500;
 			}
 		});
 		bul_1.setBounds(302, 10, 135, 90);
@@ -174,13 +174,13 @@ public class DPanel extends JPanel {
 		add(bul_plus_1);
 		
 		
-		//미트마니아
+		//펩시맥스(0)M
 		JButton bul_1_1 = new JButton("\uD3A9\uC2DC\uB9E5\uC2A4(0)M");
 		bul_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.mount[33] = 0;
-				Main.menu[33] = "미트마니아";
-				Main.price[33] = 4000;
+				Main.menu[33] = "펩시맥스(0)M";
+				Main.price[33] = 1500;
 			}
 		});
 		bul_1_1.setBounds(442, 10, 135, 90);
@@ -222,16 +222,16 @@ public class DPanel extends JPanel {
 		add(bul_minus_1_1);
 		
 		
-		//산체스
-		JButton bul_1_2 = new JButton("\uC544\uBA54\uB9AC\uCE74\uB178Hot");
+		//오렌지주스M
+		JButton bul_1_2 = new JButton("\uC624\uB80C\uC9C0\uC8FC\uC2A4M");
 		bul_1_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.mount[34] = 0;
-				Main.menu[34] = "산체스";
-				Main.price[34] = 3800;
+				Main.menu[34] = "오렌지주스M";
+				Main.price[34] = 3000;
 			}
 		});
-		bul_1_2.setBounds(15, 183, 135, 90);
+		bul_1_2.setBounds(591, 10, 135, 90);
 		add(bul_1_2);
 		
 		JButton bul_plus_1_2 = new JButton("+");
@@ -242,13 +242,13 @@ public class DPanel extends JPanel {
 			}
 		});
 		bul_plus_1_2.setFont(new Font("Dialog", Font.PLAIN, 12));
-		bul_plus_1_2.setBounds(102, 297, 41, 23);
+		bul_plus_1_2.setBounds(678, 124, 41, 23);
 		add(bul_plus_1_2);
 		
 		textField_3 = new JTextField();
 		textField_3.setText(""+Main.mount[34]);
 		textField_3.setColumns(10);
-		textField_3.setBounds(56, 296, 46, 23);
+		textField_3.setBounds(632, 123, 46, 23);
 		add(textField_3);
 		
 		JButton bul_minus_1_2 = new JButton("-");
@@ -266,20 +266,20 @@ public class DPanel extends JPanel {
 			}
 		});
 		bul_minus_1_2.setFont(new Font("Adobe Song Std L", Font.PLAIN, 14));
-		bul_minus_1_2.setBounds(15, 297, 41, 23);
+		bul_minus_1_2.setBounds(591, 124, 41, 23);
 		add(bul_minus_1_2);
 		
 		
-		//스모키살사
-		JButton bul_1_3 = new JButton("\uC544\uBA54\uB9AC\uCE74\uB178Iced");
+		//아메리카노Hot
+		JButton bul_1_3 = new JButton("\uC544\uBA54\uB9AC\uCE74\uB178Hot");
 		bul_1_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.mount[35] = 0;
-				Main.menu[35] = "스모키살사";
-				Main.price[35] = 3700;
+				Main.menu[35] = "아메리카노Hot";
+				Main.price[35] = 2000;
 			}
 		});
-		bul_1_3.setBounds(162, 183, 135, 90);
+		bul_1_3.setBounds(15, 183, 135, 90);
 		add(bul_1_3);
 		
 		JButton bul_plus_1_3 = new JButton("+");
@@ -290,13 +290,13 @@ public class DPanel extends JPanel {
 			}
 		});
 		bul_plus_1_3.setFont(new Font("Dialog", Font.PLAIN, 12));
-		bul_plus_1_3.setBounds(249, 297, 41, 23);
+		bul_plus_1_3.setBounds(102, 297, 41, 23);
 		add(bul_plus_1_3);
 		
 		textField_4 = new JTextField();
 		textField_4.setText(""+Main.mount[35]);
 		textField_4.setColumns(10);
-		textField_4.setBounds(203, 296, 46, 23);
+		textField_4.setBounds(56, 296, 46, 23);
 		add(textField_4);
 		
 		JButton bul_minus_1_3 = new JButton("-");
@@ -314,20 +314,20 @@ public class DPanel extends JPanel {
 			}
 		});
 		bul_minus_1_3.setFont(new Font("Adobe Song Std L", Font.PLAIN, 14));
-		bul_minus_1_3.setBounds(162, 297, 41, 23);
+		bul_minus_1_3.setBounds(15, 297, 41, 23);
 		add(bul_minus_1_3);
 		
 		
-		//메가바이트
-		JButton bul_1_6 = new JButton("\uC624\uB80C\uC9C0\uC8FC\uC2A4M");
+		//아메리카노Iced
+		JButton bul_1_6 = new JButton("\uC544\uBA54\uB9AC\uCE74\uB178Iced");
 		bul_1_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.mount[36] = 0;
-				Main.menu[36] = "메가바이트";
-				Main.price[36] = 4300;
+				Main.menu[36] = "아메리카노Iced";
+				Main.price[36] = 2000;
 			}
 		});
-		bul_1_6.setBounds(582, 10, 135, 90);
+		bul_1_6.setBounds(162, 183, 135, 90);
 		add(bul_1_6);
 		
 		JButton bul_plus_1_6 = new JButton("+");
@@ -338,13 +338,13 @@ public class DPanel extends JPanel {
 			}
 		});
 		bul_plus_1_6.setFont(new Font("Dialog", Font.PLAIN, 12));
-		bul_plus_1_6.setBounds(669, 124, 41, 23);
+		bul_plus_1_6.setBounds(249, 297, 41, 23);
 		add(bul_plus_1_6);
 		
 		textField_7 = new JTextField();
 		textField_7.setText(""+Main.mount[36]);
 		textField_7.setColumns(10);
-		textField_7.setBounds(623, 123, 46, 23);
+		textField_7.setBounds(203, 296, 46, 23);
 		add(textField_7);
 		
 		JButton bul_minus_1_6 = new JButton("-");
@@ -362,7 +362,7 @@ public class DPanel extends JPanel {
 			}
 		});
 		bul_minus_1_6.setFont(new Font("Adobe Song Std L", Font.PLAIN, 14));
-		bul_minus_1_6.setBounds(582, 124, 41, 23);
+		bul_minus_1_6.setBounds(162, 297, 41, 23);
 		add(bul_minus_1_6);
 		
 	}
