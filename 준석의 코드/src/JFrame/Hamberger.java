@@ -97,7 +97,6 @@ public class Hamberger {
             pNorth.add(l[i]);
             pNorth.add(ok[i]);
         }
- 
         // 중앙
         TextArea ta = new TextArea("", 0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
         ta.setText("   상품명        단가        수량        합계\n\n");
