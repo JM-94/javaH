@@ -36,7 +36,6 @@ public class login extends JFrame {
 		logBtn.addActionListener( new ActionListener() {            
             public void actionPerformed(ActionEvent e) {
                 String pass = "1234";
-                
                 if(pass.equals(txtPass.getText())) {
                 	new Ex01();
                 	dispose();

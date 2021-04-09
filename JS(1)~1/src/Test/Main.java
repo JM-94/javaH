@@ -49,7 +49,7 @@ public class Main extends JFrame {
 		}
 		getContentPane().setLayout(null);
 
-		JButton burger = new JButton("세트 메뉴");
+		JButton burger = new JButton("버거 세트");
 		burger.setBounds(750, 0, 134, 97);
 		getContentPane().add(burger);
 
@@ -127,10 +127,10 @@ public class Main extends JFrame {
 		JButton btnNewButton_2 = new JButton("매출");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				sel.select();
+				Ma m = new Ma();
 			}
 		});
-		btnNewButton_2.setBounds(329, 827, 97, 23);
+		btnNewButton_2.setBounds(418, 827, 97, 23);
 		getContentPane().add(btnNewButton_2);
 
 		JButton exit = new JButton("종료");
@@ -139,7 +139,7 @@ public class Main extends JFrame {
 				System.exit(0);
 			}
 		});
-		exit.setBounds(491, 827, 97, 23);
+		exit.setBounds(612, 827, 97, 23);
 		getContentPane().add(exit);
 
 		JButton order = new JButton("주문");
@@ -159,7 +159,7 @@ public class Main extends JFrame {
 				MyMShow.showMe(message);
 			}
 		});
-		order.setBounds(0, 814, 127, 47);
+		order.setBounds(213, 827, 97, 23);
 		getContentPane().add(order);
 		table.setModel(new DefaultTableModel(new Object[][] { { null, null, null, null }, },
 				new String[] { "상품명", "가격", "수량", "합계" }));
