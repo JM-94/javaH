@@ -3,6 +3,8 @@
 - JAVA는 Eclipse에서 사용한 환경에서 진행하였습니다.
 - DataBase는 Oracle SQL를 사용한 환경에서 진행하였습니다.
 
+![img](JAVA_Swing.png)
+
 ## 소개
 - JAVA
     - 기본 폼과 폼 위에 패널 구현
